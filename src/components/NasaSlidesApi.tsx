@@ -11,6 +11,14 @@ type ApodData = {
   copyright?: string
 }
 
+const truncate = (str: string, max: number, suffix: string) =>
+  str.length < max
+    ? str
+    : `${str.substr(
+        0,
+        str.substr(0, max - suffix.length).lastIndexOf('.')
+      )}${suffix}`
+
 export const fetchNasaSlides = async (): Promise<Slide[]> => {
   const response = await fetch(
     'https://api.nasa.gov/planetary/apod?api_key=4Bobk2mYQPoeEgVugTAMyeRrvhwqTXXeZcIWKKZ9&start_date=2018-01-01&end_date=2018-01-20'
@@ -22,10 +30,7 @@ export const fetchNasaSlides = async (): Promise<Slide[]> => {
     .map((entry: ApodData, index: number) => {
       return {
         title: entry.title,
-        text: entry?.explanation.substring(
-          0,
-          Math.min(250, entry.explanation.length)
-        ),
+        text: truncate(entry?.explanation, 350, '.'),
         img: entry.hdurl,
         id: index,
       }

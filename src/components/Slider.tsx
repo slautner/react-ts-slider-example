@@ -1,6 +1,7 @@
 import { SliderProps } from './Types'
 import { useState } from 'react'
 import { SliderItem } from './SliderItem'
+import '../css/Slider.css'
 
 export const Slider = (props: SliderProps) => {
   const [position, setPosition] = useState(0)
@@ -11,7 +12,7 @@ export const Slider = (props: SliderProps) => {
   return (
     <div className="slider">
       <span
-        className="next-button"
+        className="slider__next-button"
         onClick={() => {
           if (isLastElement()) {
             // set to first
@@ -26,7 +27,7 @@ export const Slider = (props: SliderProps) => {
       </span>
 
       <span
-        className="prev-button"
+        className="slider__prev-button"
         onClick={() => {
           if (isFirstElement()) {
             // set to last

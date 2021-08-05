@@ -1,4 +1,5 @@
 import { SliderItemProps } from './Types'
+import '../css/SliderItem.css'
 
 export const SliderItem = (props: SliderItemProps) => {
   const sliderItemStyle = {
@@ -6,11 +7,14 @@ export const SliderItem = (props: SliderItemProps) => {
   }
 
   return (
-    <div style={sliderItemStyle} className="slide-container switch-animation">
+    <div
+      style={sliderItemStyle}
+      className="slider-item__container slider-item__switch-animation"
+    >
       <img src={props.slide.img} alt="" />
-      <div className="slide-text-group">
-        <div className="slide-title">{props.slide.title}</div>
-        <div className="slide-text">{props.slide.text}</div>
+      <div className="slider-item__group">
+        <div className="slider-item__title">{props.slide.title}</div>
+        <div className="slider-item__text">{props.slide.text}</div>
       </div>
     </div>
   )

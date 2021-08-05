@@ -13,7 +13,11 @@ function App() {
       .catch(error => console.log(error))
   }, [])
 
-  return <Slider slides={slides} />
+  return (
+    <div data-testid="slider">
+      <Slider slides={slides} />
+    </div>
+  )
 }
 
 export default App

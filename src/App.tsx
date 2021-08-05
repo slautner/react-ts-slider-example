@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { Slider } from './Slider'
-import './App.css'
-import { Slide } from './Types'
-import { fetchNasaSlides } from './NasaSlidesApi'
+import { Slider } from './components/Slider'
+import './css/App.css'
+import { Slide } from './components/Types'
+import { fetchNasaSlides } from './components/NasaSlidesApi'
 
 function App() {
   const [slides, setSlides] = useState<Slide[]>([])

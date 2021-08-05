@@ -1,38 +1,103 @@
-.App {
-  text-align: center;
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+* {
+  box-sizing: border-box;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.slider {
+  margin: 15px auto auto auto;
+  max-width: 800px;
+  max-height: 400px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+  border: 1px black solid;
+}
+
+.slide-text-group {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   color: white;
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-top: black solid 1px;
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.slide-title {
+  font-size: 22px;
+  font-weight: bold;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.slide-text {
+  font-size: 18px;
+  font-style: italic;
+}
+
+.prev-button,
+.next-button {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+  margin: 2px;
+  padding: 5px;
+  z-index: 1;
+  opacity: 0.8;
+  transition: 0.1s;
+}
+
+.next-button {
+  right: 0;
+}
+
+.prev-button:hover,
+.next-button:hover {
+  opacity: 1;
+  font-size: 27px;
+}
+
+img {
+  max-width: 800px;
+  min-height: 400px;
+}
+
+.switch-animation {
+  -webkit-animation-name: switch-animation;
+  -webkit-animation-duration: 1.25s;
+  animation-name: switch-animation;
+  animation-duration: 1.25s;
+  animation-timing-function: ease-out;
+}
+
+@-webkit-keyframes switch-animation {
+  0% {
+    opacity: 0.7;
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes switch-animation {
+  0% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
   }
 }

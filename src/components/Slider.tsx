@@ -10,7 +10,7 @@ export const Slider = (props: SliderProps) => {
   const isFirstElement = () => position === 0
 
   return (
-    <div className="slider">
+    <section className="slider">
       <span
         className="slider__next-button"
         onClick={() => {
@@ -44,6 +44,6 @@ export const Slider = (props: SliderProps) => {
       {props.slides.map((slide, index) => (
         <SliderItem key={slide.id} slide={slide} show={index === position} />
       ))}
-    </div>
+    </section>
   )
 }

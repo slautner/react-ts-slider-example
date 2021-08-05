@@ -15,13 +15,18 @@ img {
 }
 
 .slider-item__title {
+  text-align: center;
   font-size: 22px;
   font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .slider-item__text {
+  text-align: justify;
   font-size: 18px;
   font-style: italic;
+  hyphens: auto;
+  margin-bottom: 10px;
 }
 
 .slider-item__switch-animation {

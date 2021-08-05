@@ -24,6 +24,7 @@ export const Slider = (props: SliderProps) => {
       >
         &#9654;
       </span>
+
       <span
         className="prev-button"
         onClick={() => {
@@ -38,6 +39,7 @@ export const Slider = (props: SliderProps) => {
       >
         &#9664;
       </span>
+
       {props.slides.map((slide, index) => (
         <SliderItem key={slide.id} slide={slide} show={index === position} />
       ))}
